@@ -1,0 +1,23 @@
+[33mfdc787c[m[33m ([m[1;36mHEAD[m[33m)[m HEAD@{0}: rebase (continue): cambios en pantalla inicial
+[33md57f4af[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{1}: pull origin main --rebase (start): checkout d57f4af1f8e1090209249e04dc0b8e395c5adc7a
+[33m2a83044[m[33m ([m[1;32mlautaro[m[33m)[m HEAD@{2}: commit: faltan botones en pantalla inicio
+[33mbdd438b[m[33m ([m[1;31mlautaro/lautaro[m[33m)[m HEAD@{3}: commit: a
+[33me30871d[m HEAD@{4}: commit: modified: vista/panel.java
+[33m7877186[m[33m ([m[1;31morigin/lautaro[m[33m)[m HEAD@{5}: commit (merge): agregue ventanas
+[33m9cada6e[m HEAD@{6}: commit: cambios en pantalla inicial
+[33m17e38b0[m HEAD@{7}: checkout: moving from main to lautaro
+[33mbedda6a[m[33m ([m[1;32mmain[m[33m)[m HEAD@{8}: commit (merge): Merge branch 'main' of https://github.com/POO-CR/trabajo-final-poo-grupo-11
+[33m17e38b0[m HEAD@{9}: merge lautaro: Fast-forward
+[33m1ca0c3f[m HEAD@{10}: checkout: moving from Lautaro to main
+[33m17e38b0[m HEAD@{11}: checkout: moving from lautaro to Lautaro
+[33m17e38b0[m HEAD@{12}: commit: subo nave funcionando
+[33m7e63397[m HEAD@{13}: merge origin/main: Fast-forward
+[33m1ca0c3f[m HEAD@{14}: checkout: moving from lautaro to lautaro
+[33m1ca0c3f[m HEAD@{15}: checkout: moving from main to lautaro
+[33m1ca0c3f[m HEAD@{16}: pull origin main: Fast-forward
+[33m8521d02[m HEAD@{17}: checkout: moving from lautaro2 to main
+[33m8521d02[m HEAD@{18}: checkout: moving from main to lautaro2
+[33m8521d02[m HEAD@{19}: checkout: moving from lautaro to main
+[33m8521d02[m HEAD@{20}: checkout: moving from main to lautaro
+[33m8521d02[m HEAD@{21}: checkout: moving from main to main
+[33m8521d02[m HEAD@{22}: clone: from https://github.com/POO-CR/trabajo-final-poo-grupo-11.git
