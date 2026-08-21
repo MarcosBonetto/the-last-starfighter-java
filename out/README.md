@@ -1,112 +1,97 @@
 # 🚀 The Last Starfighter
 
-Juego 2D de tipo **shoot 'em up** desarrollado en Java como proyecto académico
-para la materia Programación Orientada a Objetos.
+Juego 2D de tipo **shoot 'em up** desarrollado en Java como proyecto académico para la materia **Programación Orientada a Objetos**.
 
-El proyecto aplica conceptos de POO, patrones de diseño, concurrencia,
-persistencia con SQLite y desarrollo de interfaces gráficas mediante Java Swing.
+El proyecto aplica conceptos de POO, patrones de diseño, concurrencia, persistencia con SQLite y desarrollo de interfaces gráficas mediante Java Swing.
 
 ## 🎮 Sobre el juego
 
-The Last Starfighter está inspirado en *The Super Dimension Fortress Macross*.
+**The Last Starfighter** está inspirado en *The Super Dimension Fortress Macross*.
 
-El jugador controla una nave espacial y debe enfrentarse a diferentes tipos
-de enemigos, cada uno con comportamientos y patrones de movimiento propios.
+El jugador controla una nave espacial y debe enfrentarse a diferentes tipos de enemigos, cada uno con comportamientos y patrones de movimiento propios.
 
-El objetivo es conseguir el mayor puntaje posible antes de perder las cinco vidas
-y alcanzar el ranking de mejores jugadores.
+El objetivo es conseguir el mayor puntaje posible antes de perder las cinco vidas e intentar ingresar al ranking de mejores jugadores.
 
 ## ✨ Características principales
 
-- Movimiento y disparo de la nave.
-- Diferentes tipos de enemigos.
-- Patrones de movimiento y ataque variables.
-- Sistema de colisiones.
-- Sistema de vidas y puntaje.
-- Evolución temporal de la nave.
-- Power-ups.
-- Enemigos con estados de visibilidad.
-- Fondo animado.
-- Música y efectos de sonido.
-- Ranking persistente de mejores puntajes.
-- Persistencia mediante SQLite.
+* Movimiento y disparo de la nave.
+* Diferentes tipos de enemigos.
+* Patrones de movimiento y ataque variables.
+* Sistema de colisiones.
+* Sistema de vidas y puntaje.
+* Evolución temporal de la nave.
+* Power-ups.
+* Enemigos con diferentes estados de visibilidad.
+* Fondo animado.
+* Música y efectos de sonido.
+* Ranking persistente de mejores puntajes.
+* Persistencia de datos mediante SQLite.
 
 ## 🛠️ Tecnologías
 
-- **Lenguaje:** Java
-- **JDK probado:** JDK 25
-- **Interfaz gráfica:** Java Swing
-- **Base de datos:** SQLite
-- **IDE:** Visual Studio Code
-- **Control de versiones:** Git y GitHub
+* **Lenguaje:** Java
+* **JDK probado:** JDK 25
+* **Interfaz gráfica:** Java Swing
+* **Base de datos:** SQLite
+* **IDE:** Visual Studio Code
+* **Control de versiones:** Git y GitHub
 
 ## 🧠 Programación Orientada a Objetos
 
 ### Abstracción
 
-La clase `personaje_base` concentra atributos y comportamientos compartidos
-por los distintos personajes del juego, como posición, vida, velocidad,
-colisiones y recepción de daño.
+La clase `personaje_base` concentra atributos y comportamientos compartidos por los distintos personajes del juego, como posición, vida, velocidad, detección de colisiones y recepción de daño.
 
 ### Herencia
 
-`spaceship_1`, `Enemigo_Violeta`, `Enemigo_Rojo` y `Enemigo_Fantasma`
-heredan de `personaje_base`, reutilizando comportamiento común y
-especializando sus propias acciones.
+`spaceship_1`, `Enemigo_Violeta`, `Enemigo_Rojo` y `Enemigo_Fantasma` heredan de `personaje_base`, reutilizando comportamiento común y especializando sus propias acciones.
 
 ### Polimorfismo
 
-Las diferentes implementaciones permiten tratar los personajes mediante
-una interfaz común mientras cada tipo ejecuta su comportamiento específico.
+Las diferentes implementaciones permiten tratar a los personajes mediante una estructura común, mientras cada tipo ejecuta su comportamiento específico.
 
 ### Encapsulamiento
 
-El estado interno de los personajes se mantiene encapsulado y se accede
-mediante los métodos definidos por cada clase.
+El estado interno de los personajes se mantiene encapsulado y se accede a él mediante los métodos definidos por cada clase, evitando la modificación directa de sus atributos desde componentes externos.
 
 ## 🧩 Patrones de diseño
 
 ### Singleton
 
-Utilizado para mantener una única instancia de la conexión a SQLite y
-del `AudioManager`.
+Utilizado para mantener una única instancia de la conexión a SQLite y del `AudioManager`, evitando conexiones y administradores de audio duplicados.
 
 ### Factory Method
 
-Utilizado para desacoplar la creación de los diferentes tipos de enemigos
-del resto de la lógica del juego.
+Utilizado para desacoplar la creación de los diferentes tipos de enemigos del resto de la lógica del juego.
 
 ### Decorator
 
-Implementado para modificar dinámicamente las capacidades de la nave mediante
-power-ups y el estado `NaveEvolucionada`.
+Implementado para modificar dinámicamente las capacidades de la nave mediante power-ups y el estado `NaveEvolucionada`.
 
 ### Strategy
 
 Utilizado para representar distintos patrones de movimiento de los enemigos.
-El enemigo fantasma puede cambiar dinámicamente su estrategia dependiendo
-de su estado.
+
+El enemigo fantasma puede cambiar dinámicamente su estrategia de movimiento dependiendo de su estado visible o invisible.
 
 ### DAO
 
-Utilizado para separar la lógica de acceso a SQLite del resto de la aplicación
-y administrar el ranking de mejores puntajes.
+Utilizado para separar la lógica de acceso a SQLite del resto de la aplicación y administrar la persistencia del ranking de mejores puntajes.
 
 ## 🧵 Concurrencia
 
-El proyecto utiliza distintos mecanismos para mantener separadas la lógica
-del juego y la interfaz gráfica:
+El proyecto utiliza distintos mecanismos para mantener separadas la lógica del juego y la interfaz gráfica:
 
-- Game Loop ejecutado aproximadamente a 60 FPS.
-- Event Dispatch Thread (EDT) de Swing para la interfaz.
-- `java.util.Timer` y `TimerTask` para determinadas mecánicas.
-- `SwingUtilities.invokeLater()` para sincronizar actualizaciones con el EDT.
+* **Game Loop:** ejecuta la lógica principal del juego aproximadamente a 60 FPS.
+* **Event Dispatch Thread (EDT):** administra la interfaz gráfica y los eventos de Swing.
+* `java.util.Timer` y `TimerTask` para determinadas mecánicas ejecutadas en segundo plano.
+* `SwingUtilities.invokeLater()` para sincronizar actualizaciones con el EDT y evitar problemas de concurrencia.
 
 ## 🗃️ Persistencia
 
-Los cinco mejores puntajes se almacenan en una base de datos SQLite.
+Los cinco mejores puntajes se almacenan de forma persistente en una base de datos SQLite.
 
-El acceso a los datos se encuentra encapsulado mediante el patrón DAO.
+El acceso a los datos se encuentra separado del resto de la aplicación mediante el patrón DAO.
 
 ## 🖼️ Diagramas
 
@@ -114,7 +99,7 @@ El acceso a los datos se encuentra encapsulado mediante el patrón DAO.
 
 ![Diagrama Decorator](diagrama/diagrama.png)
 
-### Prototipo de la interfaz
+### Prototipo de la interfaz gráfica
 
 ![Prototipo IGU](diagrama/prototipo_igu.png)
 
@@ -122,36 +107,26 @@ El acceso a los datos se encuentra encapsulado mediante el patrón DAO.
 
 ### Requisitos
 
-- JDK XX
-- Visual Studio Code con Java Extension Pack
+* JDK 25
+* Visual Studio Code
+* Extension Pack for Java
 
-## ▶️ Ejecución
+### Ejecutar
 
-### Requisitos
-
-- JDK 25
-- Visual Studio Code o cualquier IDE compatible con Java
-
-### Compilar
-
-Desde la raíz del proyecto:
-
-```powershell
-New-Item -ItemType Directory -Force out | Out-Null
-
-$files = Get-ChildItem -Recurse -Filter *.java | ForEach-Object { $_.FullName }
-
-javac -cp ".;SQLite\sqlite-jdbc-3.50.3.0.jar" -d out $files
-
-java -cp "out;SQLite\sqlite-jdbc-3.50.3.0.jar" Main
+1. Clonar el repositorio.
+2. Abrir la carpeta del proyecto en Visual Studio Code.
+3. Ir a **Run and Debug**.
+4. Seleccionar **Ejecutar The Last Starfighter**.
+5. Presionar ▶️ para iniciar el juego.
 
 ## 🎓 Contexto académico
 
-Proyecto desarrollado de forma grupal para la materia **Programación Orientada
-a Objetos**.
+Proyecto desarrollado de forma grupal para la materia **Programación Orientada a Objetos**.
+
+El objetivo del trabajo fue aplicar de manera práctica conceptos del paradigma orientado a objetos, patrones de diseño, persistencia de datos, concurrencia e interfaces gráficas en una aplicación completa.
 
 ### Integrantes
 
-- Marcos Gonzalez Bonetto
-- Lautaro Usqueda Carrizo
-- Danna Berenice Katzen
+* Marcos Gonzalez Bonetto
+* Lautaro Usqueda Carrizo
+* Danna Berenice Katzen

@@ -24,3 +24,5 @@ hs_err_pid*
 replay_pid*
 !SQLite/
 !SQLite/sqlite-jdbc-3.50.3.0.jar
+
+oracleJdk-26/
