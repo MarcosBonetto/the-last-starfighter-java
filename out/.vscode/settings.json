@@ -1,0 +1,10 @@
+{
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.project.sourcePaths": [
+        "."
+    ],
+    "java.project.outputPath": "out",
+    "java.project.referencedLibraries": [
+        "SQLite/*.jar"
+    ]
+}

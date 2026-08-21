@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Ejecutar The Last Starfighter",
+            "request": "launch",
+            "mainClass": "Main",
+            "classPaths": [
+                "${workspaceFolder}/out",
+                "${workspaceFolder}/SQLite/sqlite-jdbc-3.50.3.0.jar"
+            ]
+        }
+    ]
+}
